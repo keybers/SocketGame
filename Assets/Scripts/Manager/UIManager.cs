@@ -20,6 +20,7 @@ public class UIManager : BaseManager
         base.OnInit();
         InitPanel();
         canvasTransform = GameObject.Find("Canvas").transform;
+        PushPanel(PanelType.MESSAGE);
         PushPanel(PanelType.START);
     }
     /// <summary>
@@ -96,11 +97,14 @@ public class UIManager : BaseManager
     private void InitPanel()
     {
         string panelpath = "Panel/";
-        string[] path = new string[] { "MessagePanel", "StartPanel", "LoginPanel", "LogonPanel" };
+        string[] path = new string[] { "MessagePanel", "StartPanel", "LoginPanel", "LogonPanel","RoomListPanel","RoonPanel" };
         panelPath.Add(PanelType.MESSAGE, panelpath + path[0]);
         panelPath.Add(PanelType.START, panelpath + path[1]);
         panelPath.Add(PanelType.LOGIN, panelpath + path[2]);
         panelPath.Add(PanelType.LOGON, panelpath + path[3]);
+        panelPath.Add(PanelType.ROOMLIST, panelPath + path[4]);
+        panelPath.Add(PanelType.ROOM, panelPath + path[5]);
+
     }
 
     public void SetMessagePanel(MessagePanel message)

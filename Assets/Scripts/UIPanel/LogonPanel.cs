@@ -62,4 +62,23 @@ public class LogonPanel : BasePanel
     {
         gameObject.SetActive(false);
     }
+
+    public void OnResponse(MainPack mainpack)
+    {
+        switch (mainpack.Returncode)
+        {
+            case ReturnCode.Succeed:
+                uIManager.ShowMessage("注册成功");
+                uIManager.PushPanel(PanelType.LOGIN);
+                break;
+
+            case ReturnCode.Fail:
+                uIManager.ShowMessage("注册失败");
+                break;
+
+            default:
+                Debug.LogError("def");
+                break;
+        }
+    }
 }

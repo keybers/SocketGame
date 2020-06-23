@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LogonRequest : BaseRequest
+public class LoginRequest : BaseRequest
 {
-    public LogonPanel logonPanel;
+    public LoginPanel loginPanel;
 
-    private MainPack mainPack;
+    private MainPack mainPack = null;
 
     public override void Awake()
     {
@@ -15,14 +15,12 @@ public class LogonRequest : BaseRequest
         actionCode = ActionCode.Logon;
         base.Awake();
     }
-    /// <summary>
-    /// 回到主线程
-    /// </summary>
+
     private void Update()
     {
         if(mainPack != null)
         {
-            logonPanel.OnResponse(mainPack);
+            loginPanel.OnResponse(mainPack);
             mainPack = null;
         }
     }
@@ -32,8 +30,7 @@ public class LogonRequest : BaseRequest
         this.mainPack = pack;
     }
 
-    //LoginPack
-    public void SendResquest(string user,string pass)
+    public void SendResquest(string user, string pass)
     {
         MainPack pack = new MainPack();
         pack.Requestcode = requestCode;

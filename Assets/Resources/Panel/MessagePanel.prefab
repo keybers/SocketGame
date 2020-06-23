@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3014110568503662274}
   - component: {fileID: 3014110568503662276}
   - component: {fileID: 3014110568503662275}
+  - component: {fileID: 764328617}
   m_Layer: 5
   m_Name: MessagePanel
   m_TagString: Untagged
@@ -78,3 +79,16 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 123
+--- !u!114 &764328617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014110568503662273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2deb2b77e8586a44eb7c702c9cc76106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 3014110568503662275}

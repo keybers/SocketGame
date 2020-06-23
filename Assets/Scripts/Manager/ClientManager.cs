@@ -40,6 +40,7 @@ public class ClientManager : BaseManager
             socket.Connect("127.0.0.1", 6666);
             //连接成功
             StartReceive();
+            gameFace.ShowMessage("连接成功");
         }
         catch(Exception e)
         {
@@ -89,6 +90,7 @@ public class ClientManager : BaseManager
             StartReceive();
 
         }
+        //只能在主线程运行，不能在多线程运行
         catch(Exception e)
         {
             Debug.LogWarning(e);

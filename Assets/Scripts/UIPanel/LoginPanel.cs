@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using SocketGameProtocol;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -62,4 +63,22 @@ public class LoginPanel : BasePanel
         gameObject.SetActive(false);
     }
 
+    public void OnResponse(MainPack mainPack)
+    {
+        switch (mainPack.Returncode)
+        {
+            case ReturnCode.Succeed:
+                uIManager.ShowMessage("登录成功");
+                uIManager.PushPanel(PanelType.ROOMLIST);
+                break;
+
+            case ReturnCode.Fail:
+                uIManager.ShowMessage("登录失败");
+                break;
+
+            default:
+                Debug.Log("def");
+                break;
+        }
+    }
 }
