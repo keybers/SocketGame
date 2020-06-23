@@ -45,6 +45,7 @@ public class ClientManager : BaseManager
         {
             //连接失败
             Debug.LogWarning(e);
+            gameFace.ShowMessage("连接失败！");
         }
     }
 
@@ -83,14 +84,14 @@ public class ClientManager : BaseManager
                 CloseSocket();
                 return;
             }
-
+            //消息传输是异步的
             message.ReadBuffer(len, HandleResponse);
             StartReceive();
 
         }
-        catch
+        catch(Exception e)
         {
-
+            Debug.LogWarning(e);
         }
     }
 

@@ -17,11 +17,11 @@ public class LogonRequest : BaseRequest
         switch (pack.Returncode)
         {
             case ReturnCode.Succeed:
-                Debug.Log("注册成功!");
+                face.ShowMessage("注册成功", true);
                 break;
 
             case ReturnCode.Fail:
-                Debug.LogWarning("注册失败!");
+                face.ShowMessage("注册失败", true);
                 break;
 
             default:Debug.LogError("def");

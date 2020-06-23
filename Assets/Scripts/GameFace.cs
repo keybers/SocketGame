@@ -25,13 +25,13 @@ public class GameFace : MonoBehaviour
 
     void Awake()
     {
+        uIManager = new UIManager(this);
         clientManager = new ClientManager(this);
         requestManager = new RequestManager(this);
-        uIManager = new UIManager(this);
 
+        uIManager.OnInit();
         clientManager.OnInit();
         requestManager.OnInit();
-        uIManager.OnInit();
     }
 
     private void OnDestroy()
@@ -62,6 +62,11 @@ public class GameFace : MonoBehaviour
     public void RemoveRequest(ActionCode actionCode)
     {
         requestManager.RemoveRequest(actionCode);
+    }
+
+    public void ShowMessage(string message,bool sync =false)
+    {
+        uIManager.ShowMessage(message,sync);
     }
 
 }

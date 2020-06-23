@@ -14,6 +14,7 @@ public class UIManager : BaseManager
     private Stack<BasePanel> stackPanels = new Stack<BasePanel>();
 
     private Transform canvasTransform;
+    private MessagePanel messagePanel;
     public override void OnInit()
     {
         base.OnInit();
@@ -100,7 +101,15 @@ public class UIManager : BaseManager
         panelPath.Add(PanelType.START, panelpath + path[1]);
         panelPath.Add(PanelType.LOGIN, panelpath + path[2]);
         panelPath.Add(PanelType.LOGON, panelpath + path[3]);
+    }
 
+    public void SetMessagePanel(MessagePanel message)
+    {
+        messagePanel = message;
+    }
 
+    public void ShowMessage(string message,bool synce = false)
+    {
+        messagePanel.ShowMessage(message,synce);
     }
 }
