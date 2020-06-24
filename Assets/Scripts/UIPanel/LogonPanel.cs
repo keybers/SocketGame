@@ -19,6 +19,7 @@ public class LogonPanel : BasePanel
     private void SwitchLogin()
     {
         uIManager.PopPanel();
+        uIManager.PushPanel(PanelType.LOGIN);
     }
 
     private void OnLogonClick()
@@ -68,8 +69,8 @@ public class LogonPanel : BasePanel
         switch (mainpack.Returncode)
         {
             case ReturnCode.Succeed:
+                SwitchLogin();
                 uIManager.ShowMessage("注册成功");
-                uIManager.PushPanel(PanelType.LOGIN);
                 break;
 
             case ReturnCode.Fail:

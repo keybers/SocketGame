@@ -14,6 +14,7 @@ public class StartPanel : BasePanel
 
     private void StartButtonClick()
     {
+        uIManager.PopPanel();
         uIManager.PushPanel(PanelType.LOGIN);
     }
 
