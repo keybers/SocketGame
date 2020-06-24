@@ -97,7 +97,7 @@ public class UIManager : BaseManager
     private void InitPanel()
     {
         string panelpath = "Panel/";
-        string[] path = new string[] { "MessagePanel", "StartPanel", "LoginPanel", "LogonPanel","RoomListPanel","RoonPanel" };
+        string[] path = new string[] { "MessagePanel", "StartPanel", "LoginPanel", "LogonPanel","RoomListPanel","RoomPanel" };
         panelPath.Add(PanelType.MESSAGE, panelpath + path[0]);
         panelPath.Add(PanelType.START, panelpath + path[1]);
         panelPath.Add(PanelType.LOGIN, panelpath + path[2]);
